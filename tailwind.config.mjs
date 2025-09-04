@@ -6,5 +6,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [aspectRatio()],
+  plugins: [aspectRatio],
 }
