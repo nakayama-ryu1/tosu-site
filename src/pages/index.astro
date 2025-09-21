@@ -11,20 +11,14 @@ import Layout from '../layouts/main.astro';
 
     <main class="max-w-5xl mx-auto px-4 space-y-20 md:space-y-24 my-20 md:my-24">
       <section id="profile" class="scroll-mt-16">
-        {/* ===== 改善点1: セクション見出しの調整 =====
-        - tracking-wide を追加し、文字と文字の間隔を少し広げて、視認性とデザイン性を向上させました。
+        {/* ===== 改善点1: 見出しの下線にアクセントカラーを適用 =====
+        - border-green-300 から border-amber-400 に変更。視線を引きつけ、セクションの始まりを明確にします。
         */}
-        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16 tracking-wide">プロフィール</h2>
+        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">プロフィール</h2>
         <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
           <img src="/profile-photo.png" alt="中山龍一 プロフィール写真" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-8 border-white shadow-lg">
           <div class="md:col-span-2">
-            {/* ===== 改善点2: 小見出しのサイズ調整 =====
-            - h3の文字サイズを少し小さく(text-2xl, text-xl)して、本文とのメリハリをつけ、階層を分かりやすくしました。
-            */}
             <h3 class="text-2xl font-bold text-slate-800 mb-4">「変えるなら、まず自分から。」</h3>
-            {/* ===== 改善点3: 本文の行間を調整 =====
-            - leading-relaxed から leading-loose に変更。行間をさらに広げることで、長文でも圧迫感がなくなり、非常に読みやすくなります。
-            */}
             <p class="text-lg text-slate-700 mb-8 leading-loose">「政治への不満」や「将来への不安」を口にするだけでは、子ども達に顔向けできない。その想いから、私は安定した公務員の職を辞し、将来の日本のためになると信じる道を選びました。嘆くのをやめ、行動で未来を示します。</p>
             <h3 class="text-xl font-bold text-slate-800 mb-3">鳥栖市への想い</h3>
             <p class="text-lg text-slate-700 leading-loose">妻の実家がある鳥栖市に移り住み、3人の子どもの育児に奮闘する中で、この街の未来を真剣に考えるようになりました。子ども達が「鳥栖で育って良かった」と誇りに思い、「ここで暮らし、働き、子育てしたい」と心から願える故郷を創るため、この想いを共有する仲間と共に、本気で実現に向けて行動します。</p>
@@ -33,15 +27,18 @@ import Layout from '../layouts/main.astro';
       </section>
 
       <section id="career" class="scroll-mt-16">
-        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16 tracking-wide">経歴</h2>
+        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">経歴</h2>
         <ul class="space-y-4">
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>1991年:</strong> 鹿児島県鹿児島市で誕生</p></li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2009年:</strong> 鹿児島県立甲南高等学校卒業（ソフトテニスでインターハイ・国体出場）</p></li>
+          {/* ===== 改善点2: 強調部分にメインカラーを適用 =====
+          - 太字(strong)の年号部分をメインカラーの緑(text-green-900)にすることで、デザインの一貫性を高めました。
+          */}
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">1991年:</strong> 鹿児島県鹿児島市で誕生</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2009年:</strong> 鹿児島県立甲南高等学校卒業（ソフトテニスでインターハイ・国体出場）</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm overflow-hidden">
             <div class="grid md:grid-cols-3 gap-6 items-center">
               <div class="md:col-span-2">
                 <p class="text-lg">
-                  <strong>2013年:</strong> 九州大学農学部卒業<br>（ソフトテニス部主将として九州リーグ一部昇格に導く）
+                  <strong class="text-green-900">2013年:</strong> 九州大学農学部卒業<br>（ソフトテニス部主将として九州リーグ一部昇格に導く）
                 </p>
               </div>
               <div class="md:col-span-1 flex justify-center md:justify-end">
@@ -49,18 +46,18 @@ import Layout from '../layouts/main.astro';
               </div>
             </div>
           </li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2015年:</strong> 九州大学大学院修了後、製薬会社にて動物用ワクチンの製造・生産技術改善業務に従事</p></li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2017年:</strong> 福岡県庁入庁。妻の実家がある鳥栖市へ移住</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2015年:</strong> 九州大学大学院修了後、製薬会社にて動物用ワクチンの製造・生産技術改善業務に従事</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2017年:</strong> 福岡県庁入庁。妻の実家がある鳥栖市へ移住</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm">
-            <p class="text-lg"><strong>2023年:</strong> コロナ禍やウクライナ戦争の発生など社会が大きく動く中、時代に合わせた変化が必要だと思い公務員を退職。食料生産の重要性を確信して「かさぎ農園」を開業、フィンガーライムの生産をはじめる。また、海の安全を守ることを目指すスタートアップ企業「コースタルリンク株式会社」に参画。</p>
+            <p class="text-lg"><strong class="text-green-900">2023年:</strong> コロナ禍やウクライナ戦争の発生など社会が大きく動く中、時代に合わせた変化が必要だと思い公務員を退職。食料生産の重要性を確信して「かさぎ農園」を開業、フィンガーライムの生産をはじめる。また、海の安全を守ることを目指すスタートアップ企業「コースタルリンク株式会社」に参画。</p>
           </li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2024年:</strong> コースタルリンク株式会社の取締役就任</p></li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2025年:</strong> かさぎ農園で貸農園や収穫体験をスタート。市民と食糧生産の場つなぎを目指す。</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2024年:</strong> コースタルリンク株式会社の取締役就任</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2025年:</strong> かさぎ農園で貸農園や収穫体験をスタート。市民と食糧生産の場つなぎを目指す。</p></li>
         </ul>
       </section>
 
       <section id="policy" class="scroll-mt-16">
-        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16 tracking-wide">政策 - 未来へ輝く鳥栖市へ！</h2>
+        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">政策 - 未来へ輝く鳥栖市へ！</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <div class="group bg-white rounded-xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02]">
@@ -68,7 +65,10 @@ import Layout from '../layouts/main.astro';
               <img src="/farm-photo.jpg" alt="ミニトマトを手に持っている写真" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> 農業をもっと身近に</h3>
+              {/* ===== 改善点3: カード内の見出しにメインカラーを適用 =====
+              - カードのタイトルをメインカラーの緑(text-green-900)にすることで、カード内で最も重要な要素を目立たせました。
+              */}
+              <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> 農業をもっと身近に</h3>
               <p>食料生産が重要となる今、地産地消による「食べて応援」「作って応援」を推進。自ら耕作放棄地を再生した経験を活かし、農家も市民も共に豊かになれる未来を創ります。</p>
             </div>
           </div>
@@ -77,7 +77,7 @@ import Layout from '../layouts/main.astro';
               <img src="/family-photo.jpg" alt="家族写真" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> 子育てしやすい鳥栖へ</h3>
+              <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> 子育てしやすい鳥栖へ</h3>
               <p>3人の子を持つ親として、支援の不足を痛感。「子どもは地域の宝」という考えのもと、地域全体で子どもたちを守り育てる温かい鳥栖市を実現します。</p>
             </div>
           </div>
@@ -86,7 +86,7 @@ import Layout from '../layouts/main.astro';
               <img src="/sports-photo.png" alt="スポーツで生活に活力を！" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> スポーツで生活に活力を！</h3>
+              <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> スポーツで生活に活力を！</h3>
               <p>ソフトテニスに打ち込んだ経験から、スポーツは人生の活力になると確信。子どもからシニアまで、誰もがスポーツに親しめる環境を整備し、元気な鳥栖市を創ります。</p>
             </div>
           </div>
@@ -95,7 +95,7 @@ import Layout from '../layouts/main.astro';
               <img src="/PC-illust.png" alt="デジタル化・スマート化の推進" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> デジタル化・スマート化の推進</h3>
+              <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> デジタル化・スマート化の推進</h3>
               <p>人手不足が課題の現代、市のデジタル化は必須です。これまでの支援経験を活かし、暮らしや行政のスマート化を進め、誰もが便利さを実感できる新しい鳥栖市を創ります。</p>
             </div>
           </div>
@@ -104,7 +104,7 @@ import Layout from '../layouts/main.astro';
               <img src="/event-photo.png" alt="スタートアップイベントで講演している写真" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> 挑戦を応援する街へ！</h3>
+              <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> 挑戦を応援する街へ！</h3>
               <p>変化の激しい時代、現状維持は衰退を意味します。スタートアップ役員の経験を活かし、鳥栖市を新しい挑戦が集まる「挑戦の交差点」へ。未来への投資で、鳥栖を元気にします。</p>
             </div>
           </div>
@@ -118,9 +118,12 @@ import Layout from '../layouts/main.astro';
       <p>〒841-0052 鳥栖市宿町951-2</p>
       <p>TEL: 070-9129-9099 | Email: tosu.nakayama@gmail.com</p>
       <div class="flex justify-center space-x-6 mt-6">
-        <a href="https://x.com/Nakayama_Ryu1" target="_blank" title="X (旧Twitter)" class="text-3xl hover:text-green-200 transition-colors">X</a>
-        <a href="https://www.instagram.com/nakayama.ryuichi/" target="_blank" title="Instagram" class="text-3xl hover:text-green-200 transition-colors">Instagram</a>
-        <a href="https://www.threads.net/@nakayama.ryuichi" target="_blank" title="Threads" class="text-3xl hover:text-green-200 transition-colors">Threads</a>
+        {/* ===== 改善点4: リンクのホバーにアクセントカラーを適用 =====
+        - マウスを乗せた時の色をアクセントカラーに変更し、サイト全体での色の使い方に一貫性を持たせました。
+        */}
+        <a href="https://x.com/Nakayama_Ryu1" target="_blank" title="X (旧Twitter)" class="text-3xl hover:text-amber-400 transition-colors">X</a>
+        <a href="https://www.instagram.com/nakayama.ryuichi/" target="_blank" title="Instagram" class="text-3xl hover:text-amber-400 transition-colors">Instagram</a>
+        <a href="https://www.threads.net/@nakayama.ryuichi" target="_blank" title="Threads" class="text-3xl hover:text-amber-400 transition-colors">Threads</a>
       </div>
       <p class="mt-8 text-sm text-green-300">&copy; 2025 中山龍一</p>
     </footer>
