@@ -2,29 +2,15 @@
 import Layout from '../layouts/main.astro';
 ---
 <Layout title="中山龍一（なかやま りゅういち）公式サイト｜鳥栖市の未来を創る">
-  {/* ===== 改善点1: 全体のトーンを調整 =====
-  - 背景を無機質なグレー(gray)から、少し温かみのあるスレート(slate)に変更。
-  - 基本の文字色もslate系に統一し、全体的に落ち着いたモダンな印象に。
-  */}
   <div class="bg-slate-50 text-slate-700">
     <header class="text-center py-16 px-4 md:py-20">
       <img src="/main-photo.png" alt="野菜を手にする中山龍一" class="max-w-4xl mx-auto w-full rounded-2xl shadow-2xl mb-12">
-      {/* ===== 改善点2: メイン見出しの視認性向上 =====
-      - 見出しの色をより濃い緑(green-900)にして力強さを出しつつ、サブテキストは少し色を抑えて(slate-600)メリハリをつけました。
-      */}
       <h1 class="text-5xl md:text-6xl font-black text-green-900">中山 龍一 <span class="text-3xl md:text-4xl font-bold">（なかやま りゅういち）</span></h1>
       <p class="mt-4 text-xl md:text-2xl text-slate-600 font-semibold">食と農で未来を支える</p>
     </header>
 
-    {/* ===== 改善点3: セクション間の余白を再設計 =====
-    - space-y-24からspace-y-20に少し詰め、代わりに各セクションの内側に余白(padding)を持たせることで、よりリズミカルでまとまりのあるレイアウトにしました。
-    */}
     <main class="max-w-5xl mx-auto px-4 space-y-20 md:space-y-24 my-20 md:my-24">
       <section id="profile" class="scroll-mt-16">
-        {/* ===== 改善点4: セクション見出しを洗練 =====
-        - 太い下線を、細く柔らかなアクセント(border-green-300)に変更。圧迫感をなくし、モダンな印象に。
-        - 見出しとコンテンツの間の余白(mb-16)を少し広げ、情報の区切りを明確に。
-        */}
         <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16">プロフィール</h2>
         <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
           <img src="/profile-photo.png" alt="中山龍一 プロフィール写真" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-8 border-white shadow-lg">
@@ -37,27 +23,36 @@ import Layout from '../layouts/main.astro';
         </div>
       </section>
 
+      {/* ===== 経歴セクションをご要望に合わせて更新 ===== */}
       <section id="career" class="scroll-mt-16">
         <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16">経歴</h2>
-        {/* ===== 改善点5: 経歴リストのデザインを改善 =====
-        - 各項目に枠線(border)を追加し、背景を少しだけ透過させる(bg-white/80)ことで、軽やかさと情報の区別しやすさを両立させました。
-        - 影(shadow)を少し控えめにし、上品な印象に。
-        */}
         <ul class="space-y-4">
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>1991年:</strong> 鹿児島県鹿児島市で誕生</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2009年:</strong> 鹿児島県立甲南高等学校卒業（ソフトテニスでインターハイ・国体出場）</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm overflow-hidden">
             <div class="grid md:grid-cols-3 gap-6 items-center">
-              <div class="md:col-span-2"><p class="text-lg"><strong>2013年:</strong> 九州大学農学部卒業（ソフトテニス部主将として九州リーグ一部昇格に導く）</p></div>
-              <div class="md:col-span-1"><img src="/tennis-photo.png" alt="ソフトテニスをする中山龍一" class="rounded-lg shadow-sm w-full h-auto"></div>
+              <div class="md:col-span-2">
+                <p class="text-lg">
+                  <strong>2013年:</strong> 九州大学農学部卒業<br>（ソフトテニス部主将として九州リーグ一部昇格に導く）
+                </p>
+              </div>
+              {/* 画像の幅を少し小さく調整 */}
+              <div class="md:col-span-1 flex justify-center md:justify-end">
+                <img src="/tennis-photo.png" alt="ソフトテニスをする中山龍一" class="rounded-lg shadow-sm w-full max-w-xs h-auto">
+              </div>
             </div>
           </li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2015年:</strong> 九州大学大学院修了後、製薬会社にて動物用ワクチンの製造・開発に従事</p></li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2017年:</strong> 妻の実家がある鳥栖市へ移住、福岡県庁入庁</p></li>
-          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2023年〜:</strong> 激動の社会情勢を受け公務員を退職。食料生産の重要性を確信し「かさぎ農園」開業。海の安全を守るスタートアップ企業に参画（2024年より取締役就任）</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2015年:</strong> 九州大学大学院修了後、製薬会社にて動物用ワクチンの製造・生産技術改善業務に従事</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2017年:</strong> 福岡県庁入庁。妻の実家がある鳥栖市へ移住</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm">
+            <p class="text-lg"><strong>2023年〜:</strong> コロナ禍やウクライナ戦争の発生など社会が大きく動く中、時代に合わせた変化が必要だと思い公務員を退職。食料生産の重要性を確信して「かささぎ農園」を開業、フィンガーライムの生産をはじめる。また、海の安全を守ることを目指すスタートアップ企業「コースタルリンク株式会社」に参画。</p>
+          </li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2024年:</strong> コースタルリンク株式会社の取締役就任</p></li>
+          <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong>2025年:</strong> かささぎ農園で貸農園や収穫体験をスタート。市民と食糧生産の場つなぎを目指す。</p></li>
         </ul>
       </section>
 
+      {/* ===== 政策セクションをご要望に合わせて更新 ===== */}
       <section id="policy" class="scroll-mt-16">
         <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-green-300 pb-4 mb-12 md:mb-16">政策 - 未来へ輝く鳥栖市へ！</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,14 +74,31 @@ import Layout from '../layouts/main.astro';
               <p>3人の子を持つ親として、支援の不足を痛感。「子どもは地域の宝」という考えのもと、地域全体で子どもたちを守り育てる温かい鳥栖市を実現します。</p>
             </div>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-            <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> スポーツで生活に活力を！</h3>
-            <p>ソフトテニスに打ち込んだ経験から、スポーツは人生の活力になると確信。子どもからシニアまで、誰もがスポーツに親しめる環境を整備し、元気な鳥栖市を創ります。</p>
+
+          {/* ===== ここに画像を追加しました ===== */}
+          <div class="bg-white rounded-xl shadow-lg flex flex-col overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="aspect-w-16 aspect-h-9">
+              {/* TODO: あとで `src` の中身を、ご自身の画像のパス（例: /sports-photo.png）に書き換えてください */}
+              <img src="https://placehold.jp/400x225.png?text=スポーツ" alt="スポーツで生活に活力を！" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex-grow">
+              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> スポーツで生活に活力を！</h3>
+              <p>ソフトテニスに打ち込んだ経験から、スポーツは人生の活力になると確信。子どもからシニアまで、誰もがスポーツに親しめる環境を整備し、元気な鳥栖市を創ります。</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-            <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> デジタル化・スマート化の推進</h3>
-            <p>人手不足が課題の現代、市のデジタル化は必須です。これまでの支援経験を活かし、暮らしや行政のスマート化を進め、誰もが便利さを実感できる新しい鳥栖市を創ります。</p>
+
+          {/* ===== ここに画像を追加しました ===== */}
+          <div class="bg-white rounded-xl shadow-lg flex flex-col overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="aspect-w-16 aspect-h-9">
+              {/* TODO: あとで `src` の中身を、ご自身の画像のパス（例: /digital-photo.png）に書き換えてください */}
+              <img src="https://placehold.jp/400x225.png?text=デジタル化" alt="デジタル化・スマート化の推進" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex-grow">
+              <h3 class="text-xl font-bold mb-2 flex items-center text-slate-800"> デジタル化・スマート化の推進</h3>
+              <p>人手不足が課題の現代、市のデジタル化は必須です。これまでの支援経験を活かし、暮らしや行政のスマート化を進め、誰もが便利さを実感できる新しい鳥栖市を創ります。</p>
+            </div>
           </div>
+          
           <div class="bg-white rounded-xl shadow-lg flex flex-col overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
             <div class="aspect-w-16 aspect-h-9">
               <img src="/event-photo.png" alt="スタートアップイベントで講演している写真" class="w-full h-full object-cover">
@@ -100,11 +112,6 @@ import Layout from '../layouts/main.astro';
       </section>
     </main>
 
-    {/* ===== 改善点6: フッターのデザインを調整 =====
-    - 背景色を濃い緑(green-900)に統一し、引き締まった印象に。
-    - SNSリンクのホバーエフェクトを色の変化に変更し、よりインタラクティブに。
-    - text-3次というタイポを修正。
-    */}
     <footer class="bg-green-900 text-white text-center mt-24 py-12 px-4">
       <h2 class="text-3xl font-bold mb-4">ご連絡・お問い合わせ</h2>
       <p class="font-bold">中山龍一 後援会事務所</p>
