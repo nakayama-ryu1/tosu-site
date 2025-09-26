@@ -1,22 +1,30 @@
 ---
 import Layout from '../layouts/main.astro';
+
+// --- ここから ---
+// SEOと公職選挙法を考慮したタイトルと説明文を定義
+const pageTitle = "中山龍一（なかやま りゅういち）公式サイト｜鳥栖市政への挑戦";
+const pageDesc = "中山龍一（なかやま りゅういち）の公式サイトです。鳥栖市議会議員選挙への立候補を予定しています。食と農で鳥栖市の未来を支える政策やプロフィールをご紹介します。";
 ---
-<Layout title="中山龍一（なかやま りゅういち）公式サイト｜鳥栖市の未来を創る">
+{/* Layoutにtitleとdescriptionを渡すように修正 */}
+<Layout title={pageTitle} description={pageDesc}>
+{/* --- ここまでを修正 --- */}
+
   <div class="bg-slate-50 text-slate-700">
     <header class="text-center py-16 px-4 md:py-20">
-      <img src="/main-photo.png" alt="野菜を手にする中山龍一" class="max-w-4xl mx-auto w-full rounded-2xl shadow-2xl mb-12">
+      {/* alt属性をより具体的に修正 */}
+      <img src="/main-photo.png" alt="野菜を手に、鳥栖市の農業の未来を語る中山龍一" class="max-w-4xl mx-auto w-full rounded-2xl shadow-2xl mb-12">
       <h1 class="text-5xl md:text-6xl font-black text-green-900">中山 龍一 <span class="text-3xl md:text-4xl font-bold">（なかやま りゅういち）</span></h1>
       <p class="mt-4 text-xl md:text-2xl text-slate-600 font-semibold">食と農で未来を支える</p>
     </header>
 
     <main class="max-w-5xl mx-auto px-4 space-y-20 md:space-y-24 my-20 md:my-24">
       <section id="profile" class="scroll-mt-16">
-        {/* ===== 改善点1: 見出しの下線にアクセントカラーを適用 =====
-        - border-green-300 から border-amber-400 に変更。視線を引きつけ、セクションの始まりを明確にします。
-        */}
-        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">プロフィール</h2>
+        {/* h2見出しをより具体的に修正 */}
+        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">中山龍一のプロフィール</h2>
         <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
-          <img src="/profile-photo.png" alt="中山龍一 プロフィール写真" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-8 border-white shadow-lg">
+          {/* alt属性をより具体的に修正 */}
+          <img src="/profile-photo.png" alt="中山龍一（なかやま りゅういち）のプロフィール写真" class="w-56 h-56 md-w-64 md:h-64 rounded-full mx-auto object-cover border-8 border-white shadow-lg">
           <div class="md:col-span-2">
             <h3 class="text-2xl font-bold text-slate-800 mb-4">「変えるなら、まず自分から。」</h3>
             <p class="text-lg text-slate-700 mb-8 leading-loose">「政治への不満」や「将来への不安」を口にするだけでは、子ども達に顔向けできない。その想いから、私は安定した公務員の職を辞し、将来の日本のためになると信じる道を選びました。嘆くのをやめ、行動で未来を示します。</p>
@@ -29,9 +37,6 @@ import Layout from '../layouts/main.astro';
       <section id="career" class="scroll-mt-16">
         <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">経歴</h2>
         <ul class="space-y-4">
-          {/* ===== 改善点2: 強調部分にメインカラーを適用 =====
-          - 太字(strong)の年号部分をメインカラーの緑(text-green-900)にすることで、デザインの一貫性を高めました。
-          */}
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">1991年:</strong> 鹿児島県鹿児島市で誕生</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm"><p class="text-lg"><strong class="text-green-900">2009年:</strong> 鹿児島県立甲南高等学校卒業（ソフトテニスでインターハイ・国体出場）</p></li>
           <li class="bg-white/80 border border-slate-200 p-6 rounded-lg shadow-sm overflow-hidden">
@@ -57,17 +62,14 @@ import Layout from '../layouts/main.astro';
       </section>
 
       <section id="policy" class="scroll-mt-16">
-        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">政策 - 未来へ輝く鳥栖市へ！</h2>
+        {/* h2見出しをより具体的に修正 */}
+        <h2 class="text-4xl font-bold text-center text-green-900 border-b-2 border-amber-400 pb-4 mb-12 md:mb-16 tracking-wide">鳥栖市の未来を創る政策</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
           <div class="group bg-white rounded-xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02]">
             <div class="aspect-w-16 aspect-h-9">
               <img src="/farm-photo.jpg" alt="ミニトマトを手に持っている写真" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
             </div>
             <div class="p-6 flex-grow">
-              {/* ===== 改善点3: カード内の見出しにメインカラーを適用 =====
-              - カードのタイトルをメインカラーの緑(text-green-900)にすることで、カード内で最も重要な要素を目立たせました。
-              */}
               <h3 class="text-xl font-bold mb-2 flex items-center text-green-900"> 農業をもっと身近に</h3>
               <p>食料生産が重要となる今、地産地消による「食べて応援」「作って応援」を推進。自ら耕作放棄地を再生した経験を活かし、農家も市民も共に豊かになれる未来を創ります。</p>
             </div>
@@ -118,9 +120,6 @@ import Layout from '../layouts/main.astro';
       <p>〒841-0052 鳥栖市宿町951-2</p>
       <p>TEL: 070-9129-9099 | Email: tosu.nakayama@gmail.com</p>
       <div class="flex justify-center space-x-6 mt-6">
-        {/* ===== 改善点4: リンクのホバーにアクセントカラーを適用 =====
-        - マウスを乗せた時の色をアクセントカラーに変更し、サイト全体での色の使い方に一貫性を持たせました。
-        */}
         <a href="https://x.com/Nakayama_Ryu1" target="_blank" title="X (旧Twitter)" class="text-3xl hover:text-amber-400 transition-colors">X</a>
         <a href="https://www.instagram.com/nakayama.ryuichi/" target="_blank" title="Instagram" class="text-3xl hover:text-amber-400 transition-colors">Instagram</a>
         <a href="https://www.threads.net/@nakayama.ryuichi" target="_blank" title="Threads" class="text-3xl hover:text-amber-400 transition-colors">Threads</a>
